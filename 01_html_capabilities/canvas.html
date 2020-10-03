@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas tutorial</title>
+</head>
+<body>
+
+<canvas id="canvas" width="800" height="600"></canvas>
+<img id="image"/>
+<script>
+
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+
+    // Draw lines
+    context.moveTo(0, 0);
+    context.lineTo(200, 100);
+    context.stroke();
+
+    // Draw circles
+    // context.beginPath();
+    // context.arc(300, 100, 40, 0, 2 * Math.PI);
+    // context.stroke();
+
+    // Draw text
+    // context.font = "30px Arial";
+    // context.fillText("Hello, web-dev 2!", 10, 200);
+
+    // Draw gradient
+    // Create gradient
+    // const gradient = context.createLinearGradient(300, 0, 500, 0);
+    // gradient.addColorStop(0, "red");
+    // gradient.addColorStop(1, "white");
+
+    // Fill with gradient
+    // context.fillStyle = gradient;
+    // context.fillRect(300, 200, 500, 80);
+
+    // Save canvas to image
+    // const image = document.getElementById("image");
+    // image.src = canvas.toDataURL('image/webp');
+
+    // Draw image on canvas
+    // context.drawImage(image, 400, 400);
+</script>
+
+</body>
+</html>
