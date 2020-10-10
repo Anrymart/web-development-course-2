@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Single threaded compuration</title>
+</head>
+<body>
+
+<button onclick="calculate()">Calculate</button>
+<div id="result"></div>
+
+<button onclick="print()">Print hello world</button>
+<div id="log"></div>
+<script>
+    function calculate() {
+        for (let i = 0; i < 2E9; i++) {
+            if (i % 1E8 === 0) {
+                document.getElementById('result').textContent = i;
+            }
+        }
+    }
+
+    function print() {
+        document.getElementById('log').innerHTML += "<br>Hello world!";
+    }
+</script>
+
+</body>
+</html>

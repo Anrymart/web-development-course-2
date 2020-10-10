@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web workers example</title>
+</head>
+<body>
+
+<button onclick="calculate()">Calculate</button>
+<div id="result"></div>
+
+<button onclick="print()">Print hello world</button>
+<div id="log"></div>
+
+<script>
+    const worker = new Worker('worker.js');
+
+    worker.addEventListener('message', function (e) {
+        console.log('Worker said: ', e.data);
+    }, false);
+
+    worker.addEventListener('message', function (e) {
+        document.getElementById('result').textContent = e.data;
+    }, false);
+
+    function calculate() {
+        worker.postMessage('start'); // Send data to our worker.
+    }
+
+    function print() {
+        document.getElementById('log').innerHTML += "<br>Hello world!";
+    }
+</script>
+</body>
+</html>

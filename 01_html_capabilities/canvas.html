@@ -7,7 +7,9 @@
 <body>
 
 <canvas id="canvas" width="800" height="600"></canvas>
-<img id="image"/>
+
+<img id="image" height="300" src="http://preview.redd.it/ncd3huiuha741.jpg?width=960&crop=smart&auto=webp&s=659bfd0f5373b16ad773132e229ede66dd522a62"/>
+
 <script>
 
     let canvas = document.getElementById("canvas");
@@ -19,30 +21,33 @@
     context.stroke();
 
     // Draw circles
-    // context.beginPath();
-    // context.arc(300, 100, 40, 0, 2 * Math.PI);
-    // context.stroke();
+    context.beginPath();
+    context.strokeStyle = "#ff0000";
+    context.fillStyle = "#00ff00";
+    context.arc(300, 100, 40, 0, 2 * Math.PI);
+    context.stroke();
+    context.fill();
 
     // Draw text
-    // context.font = "30px Arial";
-    // context.fillText("Hello, web-dev 2!", 10, 200);
+    context.font = "30px Arial";
+    context.fillText("Hello, web-dev 2!", 10, 200);
 
     // Draw gradient
     // Create gradient
-    // const gradient = context.createLinearGradient(300, 0, 500, 0);
-    // gradient.addColorStop(0, "red");
-    // gradient.addColorStop(1, "white");
+    const gradient = context.createLinearGradient(300, 0, 500, 0);
+    gradient.addColorStop(0, "red");
+    gradient.addColorStop(1, "white");
 
     // Fill with gradient
-    // context.fillStyle = gradient;
-    // context.fillRect(300, 200, 500, 80);
+    context.fillStyle = gradient;
+    context.fillRect(300, 200, 500, 80);
 
     // Save canvas to image
-    // const image = document.getElementById("image");
+    const image = document.getElementById("image");
     // image.src = canvas.toDataURL('image/webp');
 
     // Draw image on canvas
-    // context.drawImage(image, 400, 400);
+    context.drawImage(image, 400, 400);
 </script>
 
 </body>
